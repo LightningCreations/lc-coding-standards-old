@@ -29,7 +29,7 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * If a function can be made into a valid constexpr function without sacrificing runtime performance, then it should be
 * Avoid Preprocessor macros wherever possible. Use templates, constexpr functions, and constexpr variables instead
 * Follow the Rules of Five and Zero. 
-    * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor, it should user-define or delete all 5.
+    * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor for a class, each of the 5 should either be user-defined or deleted.
     * A program should either declare all special member functions, or declare none. 
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
@@ -41,7 +41,7 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * If a function can be made into a valid constexpr function without sacrificing runtime performance, then it should be
 * Avoid Preprocessor macros wherever possible. Use templates, constexpr functions, and constexpr variables instead
 * Follow the Rules of Five and Zero. 
-    * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor, it should user-define or delete all 5.
+    * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor for a class, each of the 5 should either be user-defined or deleted.
     * A program should either declare all special member functions, or declare none. 
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
@@ -57,7 +57,7 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * Prefer using `[[expects]]` and `[[ensures]]` over `[[assert]]` wherever it makes sense.
 * Prefer concepts over SFINAE.
 * Follow the Rules of Five and Zero. 
-    * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor, it should user-define or delete all 5.
+    * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor for a class, each of the 5 should either be user-defined or deleted.
     * A program should either declare all special member functions, or declare none. 
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
