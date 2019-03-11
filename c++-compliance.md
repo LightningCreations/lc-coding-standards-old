@@ -9,6 +9,7 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 ## ISO C++98 Compliance
 
 * Follow the rule of Three
+    * If a program defines any of Copy Constructor, Copy Assignment, or Destructor for a class. It should define all 3.
 * DO NOT USE raw `new[]/delete[]`, use STL Collections.
 
 ## ISO C++11 Compliance
@@ -16,6 +17,8 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * If a function can be made into a valid constexpr function without sacrificing runtime performance, then it should be
 * Avoid Preprocessor macros wherever possible. Use templates, constexpr functions, and constexpr variables instead
 * Follow the Rules of Five and Zero. 
+    * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor, it should user-define or delete all 5.
+    * A program should either declare all special member functions, or declare none. 
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
 * Avoid raw calls to `new/delete`, use RAII Allocation wrappers, or automatic variables whenever possible
@@ -26,6 +29,8 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * If a function can be made into a valid constexpr function without sacrificing runtime performance, then it should be
 * Avoid Preprocessor macros wherever possible. Use templates, constexpr functions, and constexpr variables instead
 * Follow the Rules of Five and Zero. 
+    * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor, it should user-define or delete all 5.
+    * A program should either declare all special member functions, or declare none. 
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
 * Avoid raw calls to `new/delete`, use RAII Allocation wrappers, or automatic variables whenever possible
@@ -36,6 +41,8 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * If a function can be made into a valid constexpr function without sacrificing runtime performance, then it should be
 * Avoid Preprocessor macros wherever possible. Use templates, constexpr functions, and constexpr variables instead
 * Follow the Rules of Five and Zero. 
+    * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor, it should user-define or delete all 5.
+    * A program should either declare all special member functions, or declare none. 
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
 * Avoid raw calls to `new/delete`, use RAII Allocation wrappers, or automatic variables whenever possible
@@ -50,7 +57,10 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * Prefer using `[[expects]]` and `[[ensures]]` over `[[assert]]` wherever it makes sense.
 * Prefer concepts over SFINAE.
 * Follow the Rules of Five and Zero. 
+    * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor, it should user-define or delete all 5.
+    * A program should either declare all special member functions, or declare none. 
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
 * Avoid raw calls to `new/delete`, use RAII Allocation wrappers, or automatic variables whenever possible
 * DO NOT USE raw `new[]/delete[]`, use STL Collections. 
+* Use ranges whenever possible over iterator-pair algorithms
