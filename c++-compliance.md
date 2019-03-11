@@ -12,20 +12,20 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * Use exceptions to indicate situations out of the control of the programmer, not to indicate programmer error
     * Ignore this in cases where exceptions may be explicitly requested by the programmer (such as `PolymorphicWrapper::checkedcast`/equivalent)
     * If a possible and available, cause a compile time error to indicate a programming issue
-    * Otherwise, document these errors as preconditions (IE. the behavior is undefined)
+    * Otherwise, document these errors as preconditions. (IE. the behavior is undefined)
 * Use Pass-by-reference over pass-by-value for all class-types where it makes sense. 
 * Use Pass-by-value for all scalar types.
-* Use pointers only to indicate one of the following
+* Use pointers only to indicate one of the following:
     * An array with a dynamic length
     * An optional reference
     * A type-erased reference
 * Use array references to pass arrays whenever it makes sense.
 * Do not declare reference, `const`, or `volatile` non-static data members. 
-    * Also avoid `mutable` members
-* Do not declare global static objects that are not scalar, *Trivial*, or *LiteralType*
-    * All global static object should either be constant initialized or trivially default-initialized. 
-    * Prefer declaring global static objects as either `const` or `constexpr` (when available and applicable)
-    * Declare any other global objects as global functions that return a reference to a `function-local static`. 
+    * Also avoid `mutable` members.
+* Do not declare global static objects that are not scalar, *Trivial*, or *LiteralType*.
+    * All global static object should either be constant initialized or trivially default-initialized.
+    * Prefer declaring global static objects as either `const` or `constexpr` (when available and applicable).
+    * Declare any other global objects as global functions that return a reference to a `function-local static`.
 
 ## ISO C++98 Compliance
 
