@@ -8,6 +8,24 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 
 ## General C++ Compliance
 * DO NOT USE raw `new[]/delete[]`, use STL Collections.
+* Prefer static polymorphism over dynamic polymorphism. 
+* Use exceptions to indicate situations out of the control of the programmer, not to indicate programmer error
+    * Ignore this in cases where exceptions may be explicitly requested by the programmer (such as `PolymorphicWrapper::checkedcast`/equivalent)
+    * If a possible and available, cause a compile time error to indicate a programming issue
+    * Otherwise, document these errors as preconditions (IE. the behavior is undefined)
+* Use Pass-by-reference over pass-by-value for all class-types where it makes sense. 
+* Use Pass-by-value for all scalar types.
+* Use pointers only to indicate one of the following
+    * An array with a dynamic length
+    * An optional reference
+    * A type-erased reference
+* Use array references to pass arrays whenever it makes sense.
+* Do not declare reference, `const`, or `volatile` non-static data members. 
+    * Also avoid `mutable` members
+* Do not declare global static objects that are not scalar, *Trivial*, or *LiteralType*
+    * All global static object should either be constant initialized or trivially default-initialized. 
+    * Prefer declaring global static objects as either `const` or `constexpr` (when available and applicable)
+    * Declare any other global objects as global functions that return a reference to a `function-local static`. 
 
 ## ISO C++98 Compliance
 
@@ -23,6 +41,8 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
 * Avoid raw calls to `new/delete`, use RAII Allocation wrappers, or automatic variables whenever possible.
+* Const member functions should always be safe to call concurrently with any other const member function
+* Prefer scoped enumerations over unscoped enumerations.
 
 ## ISO C++14 Compliance
 
@@ -33,6 +53,8 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
 * Avoid raw calls to `new/delete`, use RAII Allocation wrappers, or automatic variables whenever possible.
+* Const member functions should always be safe to call concurrently with any other const member function
+* Prefer scoped enumerations over unscoped enumerations.
 
 ## ISO C++17 Compliance
 
@@ -43,6 +65,8 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
 * Avoid raw calls to `new/delete`, use RAII Allocation wrappers, or automatic variables whenever possible.
+* Const member functions should always be safe to call concurrently with any other const member function
+* Prefer scoped enumerations over unscoped enumerations.
 
 ## ISO C++2a Compliance
 
@@ -58,3 +82,5 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * `=delete` any special member function that does not make sense for the type. 
 * Avoid raw calls to `new/delete`, use RAII Allocation wrappers, or automatic variables whenever possible.
 * Use ranges whenever possible over iterator-pair algorithms.
+* Const member functions should always be safe to call concurrently with any other const member function
+* Prefer scoped enumerations over unscoped enumerations.
