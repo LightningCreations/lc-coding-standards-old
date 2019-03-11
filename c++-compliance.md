@@ -20,7 +20,6 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * Avoid Preprocessor macros wherever possible. Use templates, constexpr functions, and constexpr variables instead.
 * Follow the Rules of Five and Zero. 
     * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor for a class, each of the 5 should either be user-defined or deleted.
-    * A program should either declare all special member functions, or declare none. 
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
 * Avoid raw calls to `new/delete`, use RAII Allocation wrappers, or automatic variables whenever possible.
@@ -31,7 +30,6 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * Avoid Preprocessor macros wherever possible. Use templates, constexpr functions, and constexpr variables instead.
 * Follow the Rules of Five and Zero. 
     * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor for a class, each of the 5 should either be user-defined or deleted.
-    * A program should either declare all special member functions, or declare none. 
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
 * Avoid raw calls to `new/delete`, use RAII Allocation wrappers, or automatic variables whenever possible.
@@ -42,7 +40,6 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * Avoid Preprocessor macros wherever possible. Use templates, constexpr functions, and constexpr variables instead.
 * Follow the Rules of Five and Zero. 
     * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor for a class, each of the 5 should either be user-defined or deleted.
-    * A program should either declare all special member functions, or declare none. 
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
 * Avoid raw calls to `new/delete`, use RAII Allocation wrappers, or automatic variables whenever possible.
@@ -57,7 +54,6 @@ When writing C++ programs, depending on the context, one of four C++ standards m
 * Prefer concepts over SFINAE.
 * Follow the Rules of Five and Zero. 
     * If a program user-defines any of Copy Constructor, Copy Assignment, Move Constructor, Move Assignment or Destructor for a class, each of the 5 should either be user-defined or deleted.
-    * A program should either declare all special member functions, or declare none. 
 * `=default` all special member functions if possible and it makes sense to do so.
 * `=delete` any special member function that does not make sense for the type. 
 * Avoid raw calls to `new/delete`, use RAII Allocation wrappers, or automatic variables whenever possible.
