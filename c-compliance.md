@@ -3,7 +3,6 @@ When writing C programs, depending on the context, one of four C standards may b
 1. ANSI C89
 2. ISO C99
 3. ISO C11
-4. ISO C18
 
 ## ANSI C89 Compliance
 
@@ -11,4 +10,3 @@ When writing C programs, depending on the context, one of four C standards may b
 
 ## ISO C11 Compliance
 
-## ISO C18 Compliance
