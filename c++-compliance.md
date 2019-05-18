@@ -14,6 +14,7 @@ When writing C++ programs, depending on the context, one of four C++ standards m
     * If a possible and available, cause a compile time error to indicate a programming issue
     * Otherwise, document these errors as preconditions. (IE. the behavior is undefined)
 * Use Pass-by-reference over pass-by-value for all class-types where it makes sense. 
+   * Ignore this point for small, *TriviallyCopyable* types.
 * Use Pass-by-value for all scalar types.
 * Use pointers only to indicate one of the following:
     * An array with a dynamic length
@@ -26,6 +27,8 @@ When writing C++ programs, depending on the context, one of four C++ standards m
     * All global static object should either be constant initialized or trivially default-initialized.
     * Prefer declaring global static objects as either `const` or `constexpr` (when available and applicable).
     * Declare any other global objects as global functions that return a reference to a `function-local static`.
+* Do not fwrite or fread objects which do not meet the requirements for lclib-c++ *BytesWritable* or *BytesReadable* concepts respectively.
+* Avoid `volatile` member functions.
 
 ## ISO C++98 Compliance
 
