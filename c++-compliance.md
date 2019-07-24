@@ -87,3 +87,5 @@ When writing C++ programs, depending on the context, one of five C++ standards m
 * Use ranges whenever possible over iterator-pair algorithms.
 * Const member functions should always be safe to call concurrently with any other const member function
 * Prefer scoped enumerations over unscoped enumerations.
+* Use defaulted 3-way comparison operator over manual lexicographical comparison. 
+* A method which returns a `std::future` should be a coroutine. 
