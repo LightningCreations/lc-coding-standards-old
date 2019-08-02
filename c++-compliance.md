@@ -15,6 +15,7 @@ When writing C++ programs, depending on the context, one of five C++ standards m
     * Otherwise, document these errors as preconditions. (IE. the behavior is undefined)
 * Use Pass-by-reference over pass-by-value for all class-types where it makes sense. 
    * Ignore this point for small, *TriviallyCopyable* types.
+   * This Point does not apply in cases where it is opertune to move objects, but may be necessary to copy objects.
 * Use Pass-by-value for all scalar types.
 * Use pointers only to indicate one of the following:
     * An array with a dynamic length
